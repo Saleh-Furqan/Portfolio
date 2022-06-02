@@ -11,6 +11,18 @@
 	--transition: all 0.3s ease;
 }
 
+[data-theme="dark"] {
+	--color-white: black;
+	--color-light: #191919;
+	--color-dark: white;
+	--color-black: lawngreen;
+	--color-primary: yellowgreen;
+	--color-primary-light: rgba(138, 240, 37, 0.25);
+	--color-success: #29f5a6;
+	--color-warning: #ffce31;
+	--transition: all 0.3s ease;
+}
+
 ::-webkit-scrollbar {
 	width: 10px;
 	background: var(--color-primary-light);
@@ -128,6 +140,19 @@ nav .container {
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
+}
+nav .container .nightMode {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-primary);
+	padding: 10px;
+}
+nav .container .nightMode .day {
+	display: none;
+}
+nav .container .nightMode span {
+	cursor: pointer;
 }
 nav button {
 	display: none;

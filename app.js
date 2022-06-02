@@ -1,3 +1,17 @@
+// NightMode
+night = document.querySelector(".night");
+day = document.querySelector(".day");
+day.addEventListener("click", () => {
+	document.documentElement.setAttribute("data-theme", "light");
+	day.style.display = "none";
+	night.style.display = "flex";
+});
+night.addEventListener("click", () => {
+	document.documentElement.setAttribute("data-theme", "dark");
+	night.style.display = "none";
+	day.style.display = "flex";
+});
+
 // Swiper JS
 const swiper = new Swiper(".swiper", {
 	scrollbar: {
