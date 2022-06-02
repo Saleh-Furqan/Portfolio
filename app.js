@@ -1,15 +1,28 @@
 // NightMode
-night = document.querySelector(".night");
-day = document.querySelector(".day");
-day.addEventListener("click", () => {
-	document.documentElement.setAttribute("data-theme", "light");
-	day.style.display = "none";
-	night.style.display = "flex";
+const nights = document.querySelectorAll(".night");
+const days = document.querySelectorAll(".day");
+
+days.forEach((day) => {
+	day.addEventListener("click", () => {
+		document.documentElement.setAttribute("data-theme", "light");
+		nights.forEach((night) => {
+			night.style.display = "flex";
+		});
+		days.forEach((day) => {
+			day.style.display = "none";
+		});
+	});
 });
-night.addEventListener("click", () => {
-	document.documentElement.setAttribute("data-theme", "dark");
-	night.style.display = "none";
-	day.style.display = "flex";
+nights.forEach((night) => {
+	night.addEventListener("click", () => {
+		document.documentElement.setAttribute("data-theme", "dark");
+		nights.forEach((night) => {
+			night.style.display = "none";
+		});
+		days.forEach((day) => {
+			day.style.display = "flex";
+		});
+	});
 });
 
 // Swiper JS
